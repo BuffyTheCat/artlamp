@@ -1,0 +1,38 @@
+// Common styles of the project
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+body {
+    &.no-scroll {
+        position: fixed;
+
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+.container {
+    width: rem(1180);
+    margin: 0 auto;
+
+    @include below($tablet) {
+        width: auto;
+        margin: 0 rem(20);
+    }
+
+    @include below($mobile) {
+        margin: 0 rem(10);
+    }
+}

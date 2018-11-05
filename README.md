@@ -1,2 +1,0 @@
-# artlamp
-ArtLamp
