@@ -11932,7 +11932,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 "use strict";
 "use strict";
 "use strict";
-"use strict";
 
 $('.firstscreen__scroll').on('click', function () {
   event.preventDefault();
