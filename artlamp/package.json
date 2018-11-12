@@ -6,9 +6,12 @@
   "directories": {},
   "dependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0"
+    "@babel/preset-env": "^7.1.0",
+    "inputmask": "^4.0.2",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "gulp": "^3.9.1"
   },
   "scripts": {

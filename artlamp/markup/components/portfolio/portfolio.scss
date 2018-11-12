@@ -1,0 +1,140 @@
+.portfolio {
+    position: relative;
+    @extend .container;
+    padding-top: rem(40);
+    padding-bottom: rem(65);
+
+    @include below($tablet) {
+        padding: 0;
+        margin-bottom: rem(53);
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: rem(40);
+        background-image: linear-gradient(4deg, #ffaa23 0%, #ffe47a 50%, #ffae3b 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: rgba(229, 229, 229, 0);
+        font-family: "Idealist Sans SC";
+        font-size: rem(44);
+        font-weight: 400;
+
+        @include below($tablet) {
+            font-size: rem(34);
+            margin-bottom: rem(31);
+        }
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+    }
+
+    &__item {
+        display: flex!important;
+        width: 100%;
+        height: rem(582);
+        flex-shrink: 0;
+
+        @include below($tablet) {
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
+    &__item-img {
+        width: rem(792);
+        height: 100%;
+        object-fit: cover;
+        flex-shrink: 0;
+
+        @include below($tablet) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__item-title {
+        margin: 0;
+        margin-bottom: rem(36);
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(34);
+        font-weight: 400;
+        letter-spacing: 0.68px;
+
+        @include below($tablet) {
+            font-size: rem(27);
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__item-desc {
+        margin: 0;
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+        letter-spacing: 0.36px;
+
+        @include below($tablet) {
+            font-size: rem(17);
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__item-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: calc(100% - 792px);
+        height: 100%;
+        padding: rem(80) rem(37);
+        background-color: #06081b;
+        flex-shrink: 0;
+
+        @include below($tablet) {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            padding-bottom: rem(74);
+            background-color: transparent;
+        }
+    }
+
+    &__next {
+        position: absolute;
+        bottom: rem(80);
+        right: rem(31);
+        width: rem(33);
+        height: rem(14);
+        background: transparent;
+        border: none;
+        background-image: url('%=static=%general/arrow_grey.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include below($tablet) {
+            bottom: rem(25);
+            right: 0;
+            width: rem(43);
+            height: rem(14);
+        }
+    }
+
+    &_detail {
+        .portfolio__title {
+            text-align: center;
+
+            @include below($tablet) {
+                text-align: left;
+            }
+        }
+    }
+}

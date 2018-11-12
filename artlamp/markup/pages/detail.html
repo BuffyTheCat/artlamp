@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+
+    <body class="page page_detail">
+        %=symbols=%
+        {{> header/header}}
+        <main>
+            {{> inner-navigation/inner-navigation}}
+            {{> portfolio/portfolio portfolio.detail}}
+            {{> services/services}}
+            {{> formrequest/formrequest formrequest.see}}
+            {{> examples/examples}}
+            {{> reviews/reviews}}
+            {{> formrequest/formrequest formrequest.want}}
+        </main>
+        {{> footer/footer}}
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+    </body>
+
+</html>

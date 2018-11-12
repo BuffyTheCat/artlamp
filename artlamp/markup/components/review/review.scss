@@ -1,0 +1,113 @@
+.review {
+    display: flex!important;
+
+    @include below($tablet) {
+        flex-direction: column;
+    }
+
+    &__info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 586px);
+        padding-right: rem(130);
+        padding-bottom: rem(20);
+
+        @include below($tablet) {
+            width: 100%;
+            padding: 0;
+            padding-bottom: rem(90);
+        }
+    }
+    &__video {
+        width: rem(586);
+        height: rem(370);
+
+        @include below($tablet) {
+            order: -1;
+
+            width: 100%;
+            height: auto;
+            margin-bottom: rem(40);
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(41);
+    }
+
+    &__user-photo {
+        width: rem(72);
+        height: rem(72);
+        border-radius: 50%;
+        margin-right: rem(31);
+    }
+
+    &__user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__user-name,
+    &__user-city {
+        margin: 0;
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+        letter-spacing: 0.36px;
+        line-height: 1;
+    }
+
+    &__user-name {
+        margin-bottom: rem(14);
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: rem(30);
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 700;
+        letter-spacing: 0.36px;
+
+        @include below($tablet) {
+            margin-bottom: rem(35);
+            font-size: rem(24);
+        }
+    }
+
+    &__text {
+        margin: 0;
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+        letter-spacing: 0.36px;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__next {
+        position: absolute;
+        bottom: 0;
+        right: rem(130);
+        width: rem(33);
+        height: rem(14);
+        background: transparent;
+        border: none;
+        background-image: url('%=static=%general/arrow_grey.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include below($tablet) {
+            right: 0;
+        }
+    }
+}

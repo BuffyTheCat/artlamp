@@ -1,0 +1,38 @@
+.social {
+    display: flex;
+
+    @include below($tablet) {
+        position: absolute;
+        right: rem(25);
+        top: rem(40);
+    }
+
+    &__link {
+        position: relative;
+        z-index: 2;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+            margin-right: rem(15);
+        }
+
+        &:hover {
+            cursor: url('%=static=%general/light.png'), auto;
+        }
+    }
+
+    &__img {
+        width: rem(27);
+        height: rem(27);
+        cursor: pointer;
+    }
+}
+
+.light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}

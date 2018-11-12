@@ -1,0 +1,224 @@
+.steps {
+    @extend .container;
+    position: relative;
+    padding-left: rem(482);
+    padding-top: rem(163);
+    padding-bottom: rem(63);
+    height: rem(855);
+
+    @include below($tablet) {
+        padding: 0;
+        margin-bottom: rem(53);
+        height: auto;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: rem(-239);
+        left: rem(186);
+        width: rem(1014);
+        height: rem(1014);
+        background-image: url('%=static=%general/wave.png');
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 3;
+        margin: 0;
+        margin-bottom: rem(39);
+        background-image: url('%=static=%general/steps_bg.jpg');
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: rgba(249, 173, 26, 0.51);
+        font-family: "Open Sans";
+        font-size: rem(98);
+        font-weight: 800;
+        line-height: 1;
+        background-position: 554% 33%;
+        animation: steps 6s linear infinite;
+        will-change: transform;
+
+        @include below($tablet) {
+            font-size: rem(48);
+            animation: steps 9s linear infinite;
+        }
+    }
+
+    &__subtitle {
+        position: relative;
+        z-index: 3;
+        margin: 0;
+        color: #eeeeee;
+        font-family: "Idealist Sans SC";
+        font-size: rem(20);
+        font-weight: 400;
+        letter-spacing: 1.28px;
+
+        @include below($tablet) {
+            font-size: rem(19);
+            letter-spacing: 1.22px;
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__number {
+        position: relative;
+        margin-bottom: rem(17);
+        width: 100%;
+        background-image: linear-gradient(to top, #f98a13 0%, #f9ad1a 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        color: rgba(229, 229, 229, 0);
+        font-family: "Idealist Sans SC";
+        font-size: rem(54);
+        font-weight: bold;
+        letter-spacing: 0.77px;
+        line-height: rem(39);
+
+        @include below($tablet) {
+            width: auto;
+            margin: 0;
+            margin-right: rem(35);
+            font-size: rem(38);
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            right: rem(9);
+            top: 50%;
+            height: rem(1);
+            transform: translateY(-50%);
+            background-color: #353237;
+
+            @include below($tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        color: #eeeeee;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+
+        @include below($tablet) {
+            font-size: rem(17);
+        }
+    }
+
+    &__item {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+
+        @include below($tablet) {
+            position: static;
+            flex-direction: row;
+            align-items: center;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(35);
+            }
+        }
+
+        &:nth-of-type(1) {
+            top: rem(63);
+            left: rem(197);
+
+            .steps__number {
+                &::after {
+                    width: rem(165);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(35);
+                }
+            }
+        }
+        &:nth-of-type(2) {
+            top: rem(222);
+            left: 0;
+
+            .steps__number {
+                &::after {
+                    width: rem(178);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(27);
+                }
+            }
+        }
+        &:nth-of-type(3) {
+            top: rem(393);
+            left: rem(130);
+
+            .steps__number {
+                &::after {
+                    width: rem(172);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(27);
+                }
+            }
+        }
+        &:nth-of-type(4) {
+            top: rem(564);
+            left: rem(322);
+
+            .steps__number {
+                &::after {
+                    width: rem(143);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(24);
+                }
+            }
+        }
+        &:nth-of-type(5) {
+            top: rem(608);
+            left: rem(671);
+
+            .steps__number {
+                &::after {
+                    width: rem(42);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(25);
+                }
+            }
+        }
+        &:nth-of-type(6) {
+            top: rem(512);
+            right: 0;
+
+            .steps__number {
+                &::after {
+                    width: rem(79);
+                }
+
+                @include below($tablet) {
+                    margin-right: rem(26);
+                }
+            }
+        }
+    }
+}

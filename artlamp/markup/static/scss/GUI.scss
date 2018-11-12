@@ -1,2 +1,244 @@
 // GUI stylies of the project
 // For example, styles of the links, buttons and so on.
+
+.checkbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.checkbox input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox__text {
+    position: relative;
+    padding: 0 0 0 25px;
+    margin: 0;
+    color: #ededed;
+    font-family: "Open Sans";
+    font-size: rem(17);
+    font-weight: 300;
+    letter-spacing: 0.17px;
+    cursor: pointer;
+}
+
+.checkbox input:checked+.checkbox__text:after {
+    opacity: 1;
+}
+
+.checkbox__text:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: rem(3);
+    width: rem(20);
+    height: rem(20);
+    border-radius: 2px;
+    border: rem(1) solid #4e4d69;
+}
+
+.checkbox__text:after {
+    content: '';
+    left: rem(-22);
+    top: rem(-5);
+    width: rem(73);
+    height: rem(50);
+    position: absolute;
+    background-image: url('%=static=%general/checkbox.png');
+    background-size: contain;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.button {
+    position: relative;
+    height: 63px;
+    padding: rem(24);
+    display: block;
+    padding-top: rem(22);
+    text-shadow: 0 1px 0 #a06200;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: rem(19);
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(226deg, rgba(254,190,32,1) 0%, rgba(249,156,6,1) 100%);
+    border-radius: rem(40);
+    box-shadow: 0 9px 60px rgba(0, 0, 0, 0.75), 0 4px 46px rgba(255, 168, 0, 0.6), 0 5px 14px rgba(255, 186, 0, 0.35), 0 4px 0 #d28500;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    will-change: transform;
+    z-index: 4;
+	outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &::after {
+        position: absolute;
+        z-index: -2;
+        content: '';
+        top: rem(-69);
+        left: rem(118);
+        width: rem(289);
+        height: rem(155);
+        background-image: url('%=static=%general/Light_mini.png');
+        background-size: contain;
+        animation: light 10s linear infinite;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    &_simple {
+        box-shadow: none;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: rem(-69);
+            left: rem(264);
+            width: rem(289);
+            height: rem(155);
+            background-image: url('%=static=%general/Light_mini.png');
+            animation: lightBig 10s linear infinite;
+        }
+    }
+}
+
+@keyframes light {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-253px);
+    }
+    45% {
+        transform: translate(-271px, 30px);
+    }
+    50% {
+        transform: translate(-253px, 60px);
+    }
+    90% {
+        transform: translate(0, 60px);
+    }
+    95% {
+        transform: translate(23px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes lightMicro {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-130px);
+    }
+    45% {
+        transform: translate(-148px, 17.5px);
+    }
+    50% {
+        transform: translate(-130px, 35px);
+    }
+    90% {
+        transform: translate(0, 35px);
+    }
+    95% {
+        transform: translate(18px, 17.5px);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes lightBig {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-399px);
+    }
+    45% {
+        transform: translate(-417px, 30px);
+    }
+    50% {
+        transform: translate(-399px, 60px);
+    }
+    90% {
+        transform: translate(0, 60px);
+    }
+    95% {
+        transform: translate(22px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes lightSmall {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-206px);
+    }
+    45% {
+        transform: translate(-225px, 30px);
+    }
+    50% {
+        transform: translate(-206px, 60px);
+    }
+    90% {
+        transform: translate(0, 60px);
+    }
+    95% {
+        transform: translate(20px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes lightFull {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+        transform: translateX(calc(-100vw + 54px));
+    }
+    45% {
+        transform: translate(calc(-100vw + 32px), 30px);
+    }
+    50% {
+        transform: translate(calc(-100vw + 54px), 60px);
+    }
+    90% {
+        transform: translate(0, 60px);
+    }
+    95% {
+        transform: translate(15px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes steps {
+    from {
+        background-position: 554% 33%;
+    }
+
+    50% {
+        background-position: 525% 33%;
+    }
+
+    to {
+        background-position: 554% 33%;
+    }
+}

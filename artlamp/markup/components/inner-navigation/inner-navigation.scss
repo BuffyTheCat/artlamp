@@ -1,0 +1,78 @@
+.inner-navigation {
+    @extend .container;
+    display: flex;
+    padding-bottom: rem(47);
+
+    @include below($tablet) {
+        padding-top: rem(98);
+    }
+
+    ul {
+        display: inline-flex;
+        justify-content: space-between;
+        width: calc(100% + 68px);
+        margin: 0;
+        margin-left: rem(-34);
+        margin-right: rem(-34);
+        padding: 0;
+        list-style-type: none;
+
+        @include below($tablet) {
+            flex-wrap: wrap;
+        }
+
+        @include below($tablet) {
+            width: calc(100% + 14px);
+            margin-left: rem(-7);
+            margin-right: rem(-7);
+            margin-top: rem(-25);
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            margin: 0 rem(34);
+
+            @include below($tablet) {
+                margin: 0 rem(7);
+                margin-bottom: rem(25);
+            }
+        }
+    }
+
+    &__link {
+        @extend .button;
+        width: rem(240);
+
+        @include below($tablet) {
+            width: rem(158);
+            padding: rem(8) rem(13);
+            height: rem(35);
+            font-size: rem(17);
+            font-weight: 400;
+        }
+
+        &::after {
+            left: rem(72);
+            animation: lightSmall 10s linear infinite;
+
+            @include below($tablet) {
+                width: rem(159);
+                height: rem(88);
+                left: rem(60);
+                top: rem(-38);
+                animation: none;
+                animation: lightMicro 8s linear infinite;
+            }
+        }
+
+        &:not(.active) {
+            opacity: 0.8;
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

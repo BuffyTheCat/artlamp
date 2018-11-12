@@ -121,3 +121,17 @@
             background-size: $width $height;
     }
 }
+
+@mixin align-center {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: 0 auto;
+}
+
+@mixin text-hide {
+    text-indent: -9999px;
+    white-space: nowrap;
+    overflow: hidden;
+}

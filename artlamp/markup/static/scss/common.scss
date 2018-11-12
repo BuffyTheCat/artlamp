@@ -1,19 +1,20 @@
 // Common styles of the project
 
 html, body {
-    height: 100%;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
-}
+    background-color: #090c27;
+    background-image: url('%=static=%general/blue_bg4.png');
+    background-repeat: no-repeat;
+    background-position: 0 1000px;
+    background-size: 100% 100%;
+    overflow-x: hidden;
 
-body {
-    &.no-scroll {
-        position: fixed;
-
-        height: 100vh;
-        overflow: hidden;
+    @include below($tablet) {
+        background-image: none;
     }
+
 }
 
 *,
@@ -23,6 +24,16 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
 }
+
+.compensate-for-scrollbar {
+    margin: 0!important;
+}
+
+.fancybox-bg {
+    opacity: .6!important;
+    background: #000000!important;
+}
+
 .container {
     width: rem(1180);
     margin: 0 auto;
@@ -34,5 +45,14 @@ body {
 
     @include below($mobile) {
         margin: 0 rem(10);
+    }
+}
+
+.page {
+
+    &_detail {
+        .inner-navigation {
+            padding-top: rem(130);
+        }
     }
 }

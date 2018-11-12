@@ -1,0 +1,141 @@
+.services {
+    @extend .container;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: rem(40);
+
+    @include below($tablet) {
+        padding: 0;
+        margin-bottom: rem(81);
+    }
+
+    @include below($tablet) {
+        flex-direction: column;
+    }
+
+    &__img {
+        width: rem(916);
+        height: rem(710);
+        margin-left: rem(-245);
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        @include below($tablet) {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 601px);
+        margin-left: rem(-70);
+
+        @include below($tablet) {
+            width: 100%;
+            margin: 0;
+        }
+
+    }
+
+    &__title {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(65);
+        background-image: linear-gradient(4deg, #ffaa23 0%, #ffe47a 50%, #ffae3b 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: rgba(229, 229, 229, 0);
+        font-family: "Idealist Sans SC";
+        font-size: rem(44);
+        font-weight: 400;
+        text-align: center;
+
+        @include below($tablet) {
+            font-size: rem(34);
+            margin-bottom: rem(33);
+            text-align: left;
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        color: #ffffff;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: 34px;
+        letter-spacing: 0.36px;
+
+        span {
+            color: #f8e9ad;
+            font-family: "Open Sans";
+            font-weight: 600;
+            letter-spacing: 0.36px;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(36);
+
+            @include below($tablet) {
+                margin-bottom: rem(52);
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: rem(55);
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-bottom: rem(28);
+        color: #f8e9ad;
+        font-family: "Open Sans";
+        font-size: rem(22);
+        font-weight: 400;
+        letter-spacing: 0.44px;
+        white-space: nowrap;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: rem(46);
+        color: #dfdfdf;
+        font-family: "Open Sans";
+        font-size: rem(18);
+        font-weight: 400;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 36px;
+            height: 38px;
+            background-image: url('%=static=%general/lamp.png');
+            background-size: contain;
+            top: rem(-7);
+            left: 0;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(35);
+        }
+    }
+}
